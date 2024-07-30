@@ -9,7 +9,7 @@ module.exports = {
     'plugin:jest/all',
   ],
   globals: {
-    Atomics: 'readonly',
+     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
   parserOptions: {
@@ -29,9 +29,9 @@ module.exports = {
     ],
   },
   overrides:[
-	  {
-	    files: ['*.js'],
-	    excludedFiles: 'babel.config.js',
-	  }
+    {
+	files: ['*.js'],
+	excludedFiles: 'babel.config.js',
+    }
   ]
 };
