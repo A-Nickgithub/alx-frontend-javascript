@@ -1,31 +1,13 @@
-// 8-hbtn_class.js
 export default class HolbertonClass {
   constructor(size, location) {
     this._size = size;
     this._location = location;
   }
 
-  get size() {
+  [Symbol.toPrimitive](type) {
+    if (type === 'string') {
+      return this._location;
+    }
     return this._size;
-  }
-
-  set size(value) {
-    this._size = value;
-  }
-
-  get location() {
-    return this._location;
-  }
-
-  set location(value) {
-    this._location = value;
-  }
-
-  valueOf() {
-    return this._size;
-  }
-
-  toString() {
-    return this._location;
   }
 }

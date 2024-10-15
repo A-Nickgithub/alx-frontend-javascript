@@ -1,4 +1,3 @@
-// 3-currency.js
 export default class Currency {
   constructor(code, name) {
     this.code = code;
@@ -9,25 +8,27 @@ export default class Currency {
     return this._code;
   }
 
-  set code(value) {
-    if (typeof value !== 'string') {
-     throw new TypeError('Code must be a string');
-    }
-    this._code = value;
-  }
-
   get name() {
     return this._name;
   }
 
-  set name(value) {
-    if (typeof value !== 'string') {
-     throw new TypeError('Name must be a string');
+  set code(code) {
+    if (typeof code === 'string') {
+      this._code = code;
+    } else {
+      throw new Error('Code must be a string.');
     }
-    this._name = value;
+  }
+
+  set name(name) {
+    if (typeof name === 'string') {
+      this._name = name;
+    } else {
+      throw new Error('Name must be a string.');
+    }
   }
 
   displayFullCurrency() {
-    return `${this.name} (${this.code})`;
+    return `${this._name} (${this._code})`;
   }
 }
